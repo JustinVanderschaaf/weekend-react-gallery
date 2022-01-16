@@ -30,24 +30,14 @@ function App() {
       url: `/gallery/like/${galleryId}`,
     })
       .then((result) => {
-        fetchGalleryList();
+        
       })
       .catch((err) => {
         console.error("PUT failed", err);
       });
 
-    // axios.put("/gallery/like/:id", galleryId)
-    //   .then(res => {
-    //     fetchGalleryList();
-    //   })
-    //   .catch(err => {
-    //     console.error('PUT / like failed', err);
-    //   });
-
     fetchGalleryList();
   };
-
-  console.log(galleryList);
 
   return (
     <div className="App">

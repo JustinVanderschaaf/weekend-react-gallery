@@ -4,11 +4,12 @@ function GalleryItem({ gallery, likeUp }) {
   let [togglePic, setTogglePic] = useState(
     <img src={gallery.path} onClick={() => imageClick()} />
   );
-  
+
   const imageClick = () => {
-    setTogglePic(<div 
-    className="picDes" onClick={() => picUp()}>{gallery.description}
-</div>
+    setTogglePic(
+      <div className="picDes" onClick={() => picUp()}>
+        {gallery.description}
+      </div>
     );
   };
   const picUp = () => {
@@ -16,14 +17,17 @@ function GalleryItem({ gallery, likeUp }) {
   };
 
   return (
-    <li>
-      <label>
-        <br></br>
-        {togglePic}
-        <br></br>
-        <button onClick={() => likeUp(gallery.id)}className="likeBtn">LIKE!!</button > {gallery.likes} 
-      </label>    
-    </li>
+    <>
+      <li>
+        <label>
+          <br></br>
+          <div>{togglePic}</div>
+          <br></br>
+        </label>
+      </li>
+      <button className="likeBtn" onClick={() => likeUp(gallery.id)}>LIKE!!</button>
+      <div>{gallery.likes} </div>
+    </>
   );
 }
 
