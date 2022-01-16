@@ -1,6 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 
-function GalleryList({ galleryList }) {
+function GalleryList({ galleryList, likeUp}) {
   return (
     <>
       <h1>GalleryList</h1>
@@ -10,6 +10,7 @@ function GalleryList({ galleryList }) {
           <GalleryItem
             key={gallery.id}
             gallery={gallery}
+            likeUp={likeUp}
 
             // onUpdate={onUpdate}
           />

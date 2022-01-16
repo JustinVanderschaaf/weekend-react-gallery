@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 
-function GalleryItem({ gallery }) {
+function GalleryItem({ gallery, likeUp }) {
   let [togglePic, setTogglePic] = useState(
     <img src={gallery.path} onClick={() => imageClick()} />
   );
-  console.log("GalleryItem, gallery", gallery);
-
+  
   const imageClick = () => {
-    setTogglePic(
-      <div className="picDes" onClick={() => picUp()}>
-        {gallery.description}
-      </div>
+    setTogglePic(<div 
+    className="picDes" onClick={() => picUp()}>{gallery.description}
+</div>
     );
-    console.log("click", gallery.id, togglePic);
   };
   const picUp = () => {
     setTogglePic(<img src={gallery.path} onClick={() => imageClick()} />);
@@ -24,8 +21,8 @@ function GalleryItem({ gallery }) {
         <br></br>
         {togglePic}
         <br></br>
-        Likes: {gallery.likes}
-      </label>
+        <button onClick={() => likeUp(gallery.id)}className="likeBtn">LIKE!!</button > {gallery.likes} 
+      </label>    
     </li>
   );
 }
