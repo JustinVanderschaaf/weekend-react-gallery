@@ -25,7 +25,7 @@ function GalleryItem({ gallery, likeUp }) {
           <br></br>
         </label>
       </li>
-      <button className="likeBtn" onClick={() => likeUp(gallery.id)}>LIKE!!</button>
+      <button className="likeBtn" onClick={() => likeUp(gallery)}>LIKE!!</button>
       <div className="liCont">{gallery.likes} </div>
     </>
   );

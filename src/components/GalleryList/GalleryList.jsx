@@ -9,7 +9,6 @@ function GalleryList({ galleryList, likeUp}) {
             gallery={gallery}
             likeUp={likeUp}
 
-            // onUpdate={onUpdate}
           />
         ))}
       </ul>
