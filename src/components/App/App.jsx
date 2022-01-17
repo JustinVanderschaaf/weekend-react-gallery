@@ -23,20 +23,19 @@ function App() {
   };
 
   const likeUp = (galleryId) => {
-    console.log("likeUp", galleryId);
+    console.log("likeUp", galleryId.id);
 
     axios({
       method: "PUT",
-      url: `/gallery/like/${galleryId}`,
+      url: `/gallery/like/${galleryId.id}`,
+      data: galleryId,
     })
       .then((result) => {
-        
+        fetchGalleryList();
       })
       .catch((err) => {
         console.error("PUT failed", err);
       });
-
-    fetchGalleryList();
   };
 
   return (
