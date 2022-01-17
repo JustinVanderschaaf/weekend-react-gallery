@@ -7,6 +7,8 @@
   padding: 1em;
   color: white;
   margin-bottom: 1em;
+  font-size: 30px;
+font-family: cursive;
 }
 
 .App-title {
@@ -14,13 +16,17 @@
 }
 
 .picDes {
- height: 100px;
+ height: 200px;
   border: 4px solid black;
   text-align: center;
   font-size: xx-large;
   font-family: cursive;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 35%;
+  margin-right: 35%;
   background-color: aquamarine;
   line-height: 90px;
 }
+body{
+  background-image: url(https://media.istockphoto.com/vectors/trace-brown-doodle-paw-prints-seamless-pattern-background-vector-id1169439839?k=20&m=1169439839&s=612x612&w=0&h=kHR8uwONekfGBQG9eepRvO9CV2z6oImbPvenUkiwJSc=);
+}
+

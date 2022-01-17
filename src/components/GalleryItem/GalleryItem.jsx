@@ -18,15 +18,15 @@ function GalleryItem({ gallery, likeUp }) {
 
   return (
     <>
-      <li>
+      <li className="liCont">
         <label>
           <br></br>
-          <div>{togglePic}</div>
+          {togglePic}
           <br></br>
         </label>
       </li>
       <button className="likeBtn" onClick={() => likeUp(gallery.id)}>LIKE!!</button>
-      <div>{gallery.likes} </div>
+      <div className="liCont">{gallery.likes} </div>
     </>
   );
 }
