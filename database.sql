@@ -14,4 +14,6 @@ INSERT INTO "gallery"
 	('../images/happy_dog.jpg', 'What a good day hes having.', 0),
 	('../images/pup.jpg', 'Looking a little confident are we?', 0)
 	
-	
+
+		test pic
+		https://www.msah.com/sites/default/files/very-fat-cat.jpg	  BIG KITTY	

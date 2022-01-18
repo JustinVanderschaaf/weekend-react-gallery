@@ -30,3 +30,22 @@ body{
   background-image: url(https://media.istockphoto.com/vectors/trace-brown-doodle-paw-prints-seamless-pattern-background-vector-id1169439839?k=20&m=1169439839&s=612x612&w=0&h=kHR8uwONekfGBQG9eepRvO9CV2z6oImbPvenUkiwJSc=);
 }
 
+img{
+  width: 350px;
+}
+input{
+  width: 80%;
+  text-align: center;
+  height: 30px;
+  font-size: 20px;
+}
+
+.submitBtn{
+  width: 200px;
+}
+
+.addH2{
+  font-size: 35px;
+  font-family: monospace;
+  color: rgb(4, 109, 4);
+}
