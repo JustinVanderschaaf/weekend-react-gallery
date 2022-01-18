@@ -5,6 +5,7 @@ import axios from "axios";
 import GalleryList from "../GalleryList/GalleryList.jsx";
 import GalleryForm from "../GalleryForm/GalleryForm.jsx";
 import Swal from "sweetalert2";
+
 function App() {
   const [galleryList, setGalleryList] = useState([]);
 
