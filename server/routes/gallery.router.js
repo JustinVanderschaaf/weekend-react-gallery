@@ -63,20 +63,49 @@ router.get("/", (req, res) => {
 //     res.send(galleryItems);
 // }); // END GET Route
 
-
-router.post('/', (req, res) => {
-    const description = req.body.description;
-    const path = req.body.path
-    const queryText = `
+router.post("/", (req, res) => {
+  const description = req.body.description;
+  const path = req.body.path;
+  const queryText = `
         INSERT INTO "gallery" ("description", "path", "likes")
         VALUES ($1, $2, $3);
     `;
-    pool.query(queryText, [description,path,0]).then((results) => {
-        res.sendStatus(201);
-    }).catch((error) => {
-        // We know this works
-        console.log(error);
-        res.sendStatus(500);
+  pool
+    .query(queryText, [description, path, 0])
+    .then((results) => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      // We know this works
+      console.log(error);
+      res.sendStatus(500);
     });
 });
+
+// Delete task by id
+// DELETE /task/:id
+// The value of :id becomes req.params.id
+router.delete("/:galleryId", (req, res) => {
+  // Grab the URL parameter
+  console.log("id is", req.params.galleryId);
+
+  let queryText = `
+        DELETE FROM "gallery"
+        WHERE id=$1; 
+    `;
+  let queryParams = [
+    req.params.galleryId, // $1
+  ];
+
+  pool
+    .query(queryText, queryParams)
+    .then((dbRes) => {
+      // Send back a 👍
+      res.sendStatus(204); // 204 = No Content
+    })
+    .catch((err) => {
+      console.log("DELETE /gallery failed!", err);
+    });
+});
+
 module.exports = router;

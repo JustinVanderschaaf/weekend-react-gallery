@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function GalleryItem({ gallery, likeUp }) {
+function GalleryItem({ gallery, likeUp, onDelete }) {
   let [togglePic, setTogglePic] = useState(
     <img src={gallery.path} onClick={() => imageClick()} />
   );
@@ -25,8 +25,13 @@ function GalleryItem({ gallery, likeUp }) {
           <br></br>
         </label>
       </li>
-      <button className="likeBtn" onClick={() => likeUp(gallery)}>LIKE!!</button>
-      <div className="liCont">{gallery.likes} </div>
+      <button className="likeBtn" onClick={() => likeUp(gallery)}>
+        LIKE!!
+      </button>
+      <button className="deleteBtn" onClick={() => onDelete(gallery.id)}>
+        DELETE
+      </button>
+      <div className="liCont">{gallery.likes} People have Liked this</div>
     </>
   );
 }

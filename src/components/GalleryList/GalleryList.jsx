@@ -1,6 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 
-function GalleryList({ galleryList, likeUp}) {
+function GalleryList({ galleryList, likeUp, onDelete }) {
   return (
       <ul>
         {galleryList.map((gallery) => (
@@ -8,6 +8,7 @@ function GalleryList({ galleryList, likeUp}) {
             key={gallery.id}
             gallery={gallery}
             likeUp={likeUp}
+            onDelete={onDelete}
 
           />
         ))}
