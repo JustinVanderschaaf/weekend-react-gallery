@@ -63,4 +63,20 @@ router.get("/", (req, res) => {
 //     res.send(galleryItems);
 // }); // END GET Route
 
+
+router.post('/', (req, res) => {
+    const description = req.body.description;
+    const path = req.body.path
+    const queryText = `
+        INSERT INTO "gallery" ("description", "path", "likes")
+        VALUES ($1, $2, $3);
+    `;
+    pool.query(queryText, [description,path,0]).then((results) => {
+        res.sendStatus(201);
+    }).catch((error) => {
+        // We know this works
+        console.log(error);
+        res.sendStatus(500);
+    });
+});
 module.exports = router;
